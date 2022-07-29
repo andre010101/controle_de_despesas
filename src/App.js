@@ -1,11 +1,14 @@
 import React from "react";
-import GlobalStyle from './styles/global'
+import Header from "./components/Header";
+import GlobalStyle from './styles/global';
+import Resume from "./components/Header/Resume";
 
 const App = () =>{
     return (
     <>
-    <div>App</div>
+    <Header/>
     <GlobalStyle/>
+    <Resume/>
     </>
     );
 };
