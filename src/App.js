@@ -32,7 +32,7 @@ const App = () => {
 
         setIncome(`R$ ${income}`);
         setExpense(`R$ ${expense}`);
-        setTotal(`${Number(income) < Number(expense) ? "-" : ""}R$ ${total}`);//se as entradas forem menor que a saida adciona um sinal de menos
+        setTotal(`${Number(expense) < Number(income) ? "-" : ""}R$ ${total}`);//se as entradas forem menor que a saida adciona um sinal de menos
     }, [transactionsList]);
 
     const handleAdd = (transaction) => { 
