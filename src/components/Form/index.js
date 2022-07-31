@@ -1,11 +1,15 @@
+
 import React,{useState} from "react";
 import * as C from "./styles"
 
-const Form = () => {
+const Form = (handleAdd) => {
     const [desc, setDesc] = useState("");
     const [amount, setAmount] = useState("");
     const [isExpense, setExpense] = useState("false");
 
+    const generateID = () => Math.round(Math.random() * 1000);//criar um id aleatorio
+
+//verifica se nem um dos campos está vazio, caso esteja vazio Informe a descrição e o valor
     const handleSave = () => {
         if(!desc|| !amount){
            alert("Informe a descrição e o valor!");
@@ -14,6 +18,19 @@ const Form = () => {
            alert("O valor tem que ser positivo");
            return;
         }
+
+   const transaction = {
+      id:generateID(),
+      desc:desc,
+      amount:amount,
+      expense:isExpense,
+   };  
+
+   handleAdd(transaction);
+
+   setDesc("");
+   setAmount("");
+   
     };
 
     return(
